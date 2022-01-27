@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<functionblock:FunctionblockModel
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:functionblock="http://www.eclipse.org/vorto/metamodel/Functionblock"
+    name="Controller"/>

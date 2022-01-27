@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;examples/test.xmi&apos; to &apos;airquality_azure.xmi&apos;" description="Rename resource &apos;test.xmi&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="test.xmi" name="airquality_azure.xmi" stamp="1642486584967" updateReferences="true"/>
+</session>
