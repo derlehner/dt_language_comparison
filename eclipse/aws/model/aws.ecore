@@ -10,12 +10,9 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Component">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="properties" upperBound="-1"
-        eType="#//Property"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="instanceof" lowerBound="1"
         eType="#//ComponentType"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Property"/>
   <eClassifiers xsi:type="ecore:EClass" name="ComponentType">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isSingleton" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//BooleanObject"/>
@@ -52,14 +49,14 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="listValue" upperBound="-1"
         eType="#//DataValue"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="longValue" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//LongObject"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mapValue" defaultValueLiteral="">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="stringValue" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="relationshipvalue" eType="#//RelationshipValue"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mapValue" transient="true">
       <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
         <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
         <eTypeArguments eClassifier="#//DataValue"/>
       </eGenericType>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="stringValue" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="relationshipvalue" eType="#//RelationshipValue"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Relationship">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="relationshipType" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>

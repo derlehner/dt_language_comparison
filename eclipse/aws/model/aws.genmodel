@@ -16,10 +16,8 @@
     </genClasses>
     <genClasses ecoreClass="aws.ecore#//Component">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aws.ecore#//Component/name"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference aws.ecore#//Component/properties"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference aws.ecore#//Component/instanceof"/>
     </genClasses>
-    <genClasses ecoreClass="aws.ecore#//Property"/>
     <genClasses ecoreClass="aws.ecore#//ComponentType">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aws.ecore#//ComponentType/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aws.ecore#//ComponentType/isSingleton"/>
@@ -50,9 +48,9 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aws.ecore#//DataValue/integerValue"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference aws.ecore#//DataValue/listValue"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aws.ecore#//DataValue/longValue"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aws.ecore#//DataValue/mapValue"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aws.ecore#//DataValue/stringValue"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference aws.ecore#//DataValue/relationshipvalue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aws.ecore#//DataValue/mapValue"/>
     </genClasses>
     <genClasses ecoreClass="aws.ecore#//Relationship">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aws.ecore#//Relationship/relationshipType"/>
