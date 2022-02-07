@@ -10413,3 +10413,250 @@ java.io.IOException: mark/reset not supported
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:657)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:594)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1465)
+
+!ENTRY org.eclipse.core.jobs 4 2 2022-02-07 12:09:02.848
+!MESSAGE An internal error occurred during: "Loading models".
+!STACK 0
+java.lang.RuntimeException: The modeling project "aws" is invalid: Problem during loading models: 
+The Sirius resource (platform:/resource/aws/model/aws.aird) can not be loaded because it comes from a more recent Sirius release.
+Representation version is: 14.5.1.202106111100
+Last Sirius migration version is: 14.3.1.202003261200
+	at org.eclipse.sirius.ui.tools.internal.views.common.modelingproject.OpenRepresentationsFileJob.runInWorkspace(OpenRepresentationsFileJob.java:172)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:42)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: org.eclipse.sirius.business.api.migration.AirdResourceVersionMismatchException: 
+The Sirius resource (platform:/resource/aws/model/aws.aird) can not be loaded because it comes from a more recent Sirius release.
+Representation version is: 14.5.1.202106111100
+Last Sirius migration version is: 14.3.1.202003261200
+	at org.eclipse.sirius.business.internal.session.danalysis.DAnalysisSessionImpl.checkResourceErrors(DAnalysisSessionImpl.java:1454)
+	at org.eclipse.sirius.business.internal.session.danalysis.DAnalysisSessionImpl.open(DAnalysisSessionImpl.java:1407)
+	at org.eclipse.sirius.business.internal.session.SessionManagerImpl.openSession(SessionManagerImpl.java:405)
+	at org.eclipse.sirius.ui.tools.internal.views.common.modelingproject.OpenRepresentationsFileJob.performOpenSession(OpenRepresentationsFileJob.java:193)
+	at org.eclipse.sirius.ui.tools.internal.views.common.modelingproject.OpenRepresentationsFileJob.runInWorkspace(OpenRepresentationsFileJob.java:162)
+	... 2 more
+
+!ENTRY org.eclipse.ui 4 0 2022-02-07 13:24:28.244
+!MESSAGE Unhandled event loop exception
+!STACK 0
+java.lang.NumberFormatException: For input string: "20 [13]"
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
+	at java.base/java.lang.Integer.parseInt(Integer.java:668)
+	at java.base/java.lang.Integer.parseInt(Integer.java:786)
+	at org.eclipse.m2m.atl.common.AtlNbCharFile.getIndex(AtlNbCharFile.java:218)
+	at org.eclipse.m2m.atl.adt.ui.outline.AtlContentOutlinePage.doSetSelection(AtlContentOutlinePage.java:404)
+	at org.eclipse.m2m.atl.adt.ui.outline.AtlContentOutlinePage.setSelection(AtlContentOutlinePage.java:526)
+	at org.eclipse.m2m.atl.adt.ui.editor.AtlEditor.synchronizeOutlinePageSelection(AtlEditor.java:1601)
+	at org.eclipse.m2m.atl.adt.ui.editor.AtlEditor$EditorSelectionChangedListener.selectionChanged(AtlEditor.java:441)
+	at org.eclipse.jface.text.TextViewer.firePostSelectionChanged(TextViewer.java:2638)
+	at org.eclipse.jface.text.TextViewer.firePostSelectionChanged(TextViewer.java:2585)
+	at org.eclipse.jface.text.TextViewer$2.run(TextViewer.java:2564)
+	at org.eclipse.swt.widgets.Display.runTimer(Display.java:4110)
+	at org.eclipse.swt.widgets.Display.messageProc(Display.java:3234)
+	at org.eclipse.swt.internal.win32.OS.DispatchMessage(Native Method)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3610)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1157)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1046)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:644)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:153)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:150)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:657)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:594)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1465)
+
+!ENTRY org.eclipse.ui 4 0 2022-02-07 13:24:30.231
+!MESSAGE Unhandled event loop exception
+!STACK 0
+java.lang.NumberFormatException: For input string: "9 [59]"
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
+	at java.base/java.lang.Integer.parseInt(Integer.java:668)
+	at java.base/java.lang.Integer.parseInt(Integer.java:786)
+	at org.eclipse.m2m.atl.common.AtlNbCharFile.getIndex(AtlNbCharFile.java:218)
+	at org.eclipse.m2m.atl.adt.ui.outline.AtlContentOutlinePage.doSetSelection(AtlContentOutlinePage.java:404)
+	at org.eclipse.m2m.atl.adt.ui.outline.AtlContentOutlinePage.setSelection(AtlContentOutlinePage.java:526)
+	at org.eclipse.m2m.atl.adt.ui.editor.AtlEditor.synchronizeOutlinePageSelection(AtlEditor.java:1601)
+	at org.eclipse.m2m.atl.adt.ui.editor.AtlEditor$EditorSelectionChangedListener.selectionChanged(AtlEditor.java:441)
+	at org.eclipse.jface.text.TextViewer.firePostSelectionChanged(TextViewer.java:2638)
+	at org.eclipse.jface.text.TextViewer.firePostSelectionChanged(TextViewer.java:2585)
+	at org.eclipse.jface.text.TextViewer$2.run(TextViewer.java:2564)
+	at org.eclipse.swt.widgets.Display.runTimer(Display.java:4110)
+	at org.eclipse.swt.widgets.Display.messageProc(Display.java:3234)
+	at org.eclipse.swt.internal.win32.OS.DispatchMessage(Native Method)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3610)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1157)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1046)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:644)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:153)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:150)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:657)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:594)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1465)
+
+!ENTRY org.eclipse.ui 4 0 2022-02-07 13:24:31.277
+!MESSAGE Unhandled event loop exception
+!STACK 0
+java.lang.NumberFormatException: For input string: "13 [95]"
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
+	at java.base/java.lang.Integer.parseInt(Integer.java:668)
+	at java.base/java.lang.Integer.parseInt(Integer.java:786)
+	at org.eclipse.m2m.atl.common.AtlNbCharFile.getIndex(AtlNbCharFile.java:218)
+	at org.eclipse.m2m.atl.adt.ui.outline.AtlContentOutlinePage.doSetSelection(AtlContentOutlinePage.java:404)
+	at org.eclipse.m2m.atl.adt.ui.outline.AtlContentOutlinePage.setSelection(AtlContentOutlinePage.java:526)
+	at org.eclipse.m2m.atl.adt.ui.editor.AtlEditor.synchronizeOutlinePageSelection(AtlEditor.java:1601)
+	at org.eclipse.m2m.atl.adt.ui.editor.AtlEditor$EditorSelectionChangedListener.selectionChanged(AtlEditor.java:441)
+	at org.eclipse.jface.text.TextViewer.firePostSelectionChanged(TextViewer.java:2638)
+	at org.eclipse.jface.text.TextViewer.firePostSelectionChanged(TextViewer.java:2585)
+	at org.eclipse.jface.text.TextViewer$2.run(TextViewer.java:2564)
+	at org.eclipse.swt.widgets.Display.runTimer(Display.java:4110)
+	at org.eclipse.swt.widgets.Display.messageProc(Display.java:3234)
+	at org.eclipse.swt.internal.win32.OS.DispatchMessage(Native Method)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3610)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1157)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1046)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:644)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:153)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:150)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:657)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:594)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1465)
+
+!ENTRY org.eclipse.ui 4 0 2022-02-07 13:24:52.210
+!MESSAGE Unhandled event loop exception
+!STACK 0
+java.lang.NumberFormatException: For input string: "32 [20]"
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
+	at java.base/java.lang.Integer.parseInt(Integer.java:668)
+	at java.base/java.lang.Integer.parseInt(Integer.java:786)
+	at org.eclipse.m2m.atl.common.AtlNbCharFile.getIndex(AtlNbCharFile.java:218)
+	at org.eclipse.m2m.atl.adt.ui.outline.AtlContentOutlinePage.doSetSelection(AtlContentOutlinePage.java:404)
+	at org.eclipse.m2m.atl.adt.ui.outline.AtlContentOutlinePage.setSelection(AtlContentOutlinePage.java:526)
+	at org.eclipse.m2m.atl.adt.ui.editor.AtlEditor.synchronizeOutlinePageSelection(AtlEditor.java:1601)
+	at org.eclipse.m2m.atl.adt.ui.editor.AtlEditor$EditorSelectionChangedListener.selectionChanged(AtlEditor.java:441)
+	at org.eclipse.jface.text.TextViewer.firePostSelectionChanged(TextViewer.java:2638)
+	at org.eclipse.jface.text.TextViewer.firePostSelectionChanged(TextViewer.java:2585)
+	at org.eclipse.jface.text.TextViewer$2.run(TextViewer.java:2564)
+	at org.eclipse.swt.widgets.Display.runTimer(Display.java:4110)
+	at org.eclipse.swt.widgets.Display.messageProc(Display.java:3234)
+	at org.eclipse.swt.internal.win32.OS.DispatchMessage(Native Method)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3610)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1157)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1046)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:644)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:153)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:150)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:657)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:594)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1465)
+
+!ENTRY org.eclipse.ui 4 0 2022-02-07 13:24:58.999
+!MESSAGE Unhandled event loop exception
+!STACK 0
+java.lang.NumberFormatException: For input string: "42 [36]"
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
+	at java.base/java.lang.Integer.parseInt(Integer.java:668)
+	at java.base/java.lang.Integer.parseInt(Integer.java:786)
+	at org.eclipse.m2m.atl.common.AtlNbCharFile.getIndex(AtlNbCharFile.java:218)
+	at org.eclipse.m2m.atl.adt.ui.outline.AtlContentOutlinePage.doSetSelection(AtlContentOutlinePage.java:404)
+	at org.eclipse.m2m.atl.adt.ui.outline.AtlContentOutlinePage.setSelection(AtlContentOutlinePage.java:526)
+	at org.eclipse.m2m.atl.adt.ui.editor.AtlEditor.synchronizeOutlinePageSelection(AtlEditor.java:1601)
+	at org.eclipse.m2m.atl.adt.ui.editor.AtlEditor$EditorSelectionChangedListener.selectionChanged(AtlEditor.java:441)
+	at org.eclipse.jface.text.TextViewer.firePostSelectionChanged(TextViewer.java:2638)
+	at org.eclipse.jface.text.TextViewer.firePostSelectionChanged(TextViewer.java:2585)
+	at org.eclipse.jface.text.TextViewer$2.run(TextViewer.java:2564)
+	at org.eclipse.swt.widgets.Display.runTimer(Display.java:4110)
+	at org.eclipse.swt.widgets.Display.messageProc(Display.java:3234)
+	at org.eclipse.swt.internal.win32.OS.DispatchMessage(Native Method)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3610)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1157)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1046)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:644)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:153)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:150)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:657)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:594)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1465)
+
+!ENTRY org.eclipse.core.jobs 4 2 2022-02-07 13:27:00.267
+!MESSAGE An internal error occurred during: "Loading models".
+!STACK 0
+java.lang.RuntimeException: The modeling project "aws" is invalid: Problem during loading models: 
+The Sirius resource (platform:/resource/aws/model/aws.aird) can not be loaded because it comes from a more recent Sirius release.
+Representation version is: 14.5.1.202106111100
+Last Sirius migration version is: 14.3.1.202003261200
+	at org.eclipse.sirius.ui.tools.internal.views.common.modelingproject.OpenRepresentationsFileJob.runInWorkspace(OpenRepresentationsFileJob.java:172)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:42)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: org.eclipse.sirius.business.api.migration.AirdResourceVersionMismatchException: 
+The Sirius resource (platform:/resource/aws/model/aws.aird) can not be loaded because it comes from a more recent Sirius release.
+Representation version is: 14.5.1.202106111100
+Last Sirius migration version is: 14.3.1.202003261200
+	at org.eclipse.sirius.business.internal.session.danalysis.DAnalysisSessionImpl.checkResourceErrors(DAnalysisSessionImpl.java:1454)
+	at org.eclipse.sirius.business.internal.session.danalysis.DAnalysisSessionImpl.open(DAnalysisSessionImpl.java:1407)
+	at org.eclipse.sirius.business.internal.session.SessionManagerImpl.openSession(SessionManagerImpl.java:405)
+	at org.eclipse.sirius.ui.tools.internal.views.common.modelingproject.OpenRepresentationsFileJob.performOpenSession(OpenRepresentationsFileJob.java:193)
+	at org.eclipse.sirius.ui.tools.internal.views.common.modelingproject.OpenRepresentationsFileJob.runInWorkspace(OpenRepresentationsFileJob.java:162)
+	... 2 more
