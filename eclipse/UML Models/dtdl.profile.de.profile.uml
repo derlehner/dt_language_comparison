@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Profile xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_r3WngFaDEeuEpvu2Gl7rQA" name="dtdl" metaclassReference="_kZVr4FaFEeuEpvu2Gl7rQA">
+  <elementImport xmi:id="_kZVr4FaFEeuEpvu2Gl7rQA">
+    <importedElement xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Property"/>
+  </elementImport>
+  <packageImport xmi:id="_r9mZcFaDEeuEpvu2Gl7rQA">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packageImport xmi:id="_r9nAgFaDEeuEpvu2Gl7rQA">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_METAMODELS/UML.metamodel.uml#_0"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:Stereotype" xmi:id="_aTby4FaFEeuEpvu2Gl7rQA" name="ObservableAttribute">
+    <ownedAttribute xmi:id="_pABjIVaFEeuEpvu2Gl7rQA" name="base_Property" association="_pAA8EFaFEeuEpvu2Gl7rQA">
+      <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Property"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Extension" xmi:id="_pAA8EFaFEeuEpvu2Gl7rQA" name="Property_ObservableAttribute" memberEnd="_pABjIFaFEeuEpvu2Gl7rQA _pABjIVaFEeuEpvu2Gl7rQA">
+    <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_pABjIFaFEeuEpvu2Gl7rQA" name="extension_ObservableAttribute" type="_aTby4FaFEeuEpvu2Gl7rQA" aggregation="composite" association="_pAA8EFaFEeuEpvu2Gl7rQA"/>
+  </packagedElement>
+</uml:Profile>

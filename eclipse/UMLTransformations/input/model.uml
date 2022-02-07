@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:DigitalTwinProfile="http:///schemas/DigitalTwinProfile/_KrpvoFu9Eeus8K1tc4P4VA/1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/DigitalTwinProfile/_KrpvoFu9Eeus8K1tc4P4VA/1 ../profile/DigitalTwinProfile.uml#_Krsy8Fu9Eeus8K1tc4P4VA">
+  <uml:Model xmi:id="_xIVMIFTGEeu15ObSYm9ssg" name="model">
+    <packageImport xmi:id="_xJj7MFTGEeu15ObSYm9ssg">
+      <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+    </packageImport>
+    <packagedElement xmi:type="uml:Class" xmi:id="_2RUfMFTGEeu15ObSYm9ssg" name="AirQualityController">
+      <ownedComment xmi:id="_Yjr2cFu9Eeus8K1tc4P4VA">
+        <body>This is a comment</body>
+      </ownedComment>
+      <ownedAttribute xmi:id="_GoK3IFqAEeutDexZeaWgGg" name="temperatureController" type="_R9PMoFTHEeu15ObSYm9ssg" aggregation="composite" association="_MDwykFp_EeutDexZeaWgGg"/>
+      <ownedOperation xmi:id="_1I2MgFTMEeu15ObSYm9ssg" name="changeColor">
+        <ownedParameter xmi:id="_vP0uMFTNEeu15ObSYm9ssg" name="color">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_xCdJcFTNEeu15ObSYm9ssg" name="result" direction="out">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_4HCqsFTGEeu15ObSYm9ssg" name="Room">
+      <ownedAttribute xmi:id="_BObnwFp_EeutDexZeaWgGg" name="airQualityControllers" type="_2RUfMFTGEeu15ObSYm9ssg" association="_oGHfgFp-EeutDexZeaWgGg">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_GbXmsFp_EeutDexZeaWgGg"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_GyyoMFp_EeutDexZeaWgGg" value="*"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_oGHfgFp-EeutDexZeaWgGg" name="room_controller" memberEnd="_sPCcsFp-EeutDexZeaWgGg _BObnwFp_EeutDexZeaWgGg">
+      <ownedEnd xmi:id="_sPCcsFp-EeutDexZeaWgGg" name="room" type="_4HCqsFTGEeu15ObSYm9ssg" association="_oGHfgFp-EeutDexZeaWgGg"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_R9PMoFTHEeu15ObSYm9ssg" name="TemperatureSensor">
+      <ownedAttribute xmi:id="_wBL7EFUMEeu15ObSYm9ssg" name="temperature">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EFloat"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_a_UqoFdYEeu7_vQ-wWS__w" name="type" isReadOnly="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_MDwykFp_EeutDexZeaWgGg" name="controller_temperatureSensor" memberEnd="_TagWoFp_EeutDexZeaWgGg _GoK3IFqAEeutDexZeaWgGg _KnS90FvuEeujF8wUM4Bf5g">
+      <ownedEnd xmi:id="_TagWoFp_EeutDexZeaWgGg" name="airQualityController" type="_2RUfMFTGEeu15ObSYm9ssg" association="_MDwykFp_EeutDexZeaWgGg"/>
+      <ownedEnd xmi:id="_KnS90FvuEeujF8wUM4Bf5g" name="relationshipProperty" association="_MDwykFp_EeutDexZeaWgGg"/>
+    </packagedElement>
+    <profileApplication xmi:id="_psb8kFu8Eeus8K1tc4P4VA">
+      <eAnnotations xmi:id="_pshcIFu8Eeus8K1tc4P4VA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="../profile/DigitalTwinProfile.uml#_Krsy8Fu9Eeus8K1tc4P4VA"/>
+      </eAnnotations>
+      <appliedProfile href="../profile/DigitalTwinProfile.uml#_2WhFsN6LEeim_-7Nvywluw"/>
+    </profileApplication>
+  </uml:Model>
+  <DigitalTwinProfile:DTElement xmi:id="_wudw4FcGEeuBWO2rqwFOYw" base_Property="_wBL7EFUMEeu15ObSYm9ssg" id_scheme="dtmi" id_path="org:example:TemperatureSensor:Temperature" id_version="1"/>
+  <DigitalTwinProfile:ObservableProperty xmi:id="_wugNIFcGEeuBWO2rqwFOYw" base_Property="_wBL7EFUMEeu15ObSYm9ssg"/>
+  <DigitalTwinProfile:DTElement xmi:id="_lRXh0FcOEeuBWO2rqwFOYw" base_Class="_2RUfMFTGEeu15ObSYm9ssg" id_scheme="dtmi" id_path="org:example:AirQualityController" id_version="1"/>
+  <DigitalTwinProfile:DTElement xmi:id="_LxuJwFcxEeuSzuxE_Zrflg" base_Class="_4HCqsFTGEeu15ObSYm9ssg" id_scheme="dtmi" id_path="com:example:Room" id_version="1"/>
+  <DigitalTwinProfile:DTElement xmi:id="_ohC_sFdXEeu7_vQ-wWS__w" base_Class="_R9PMoFTHEeu15ObSYm9ssg" id_scheme="dtmi" id_path="org:example:tempsensor" id_version="1"/>
+  <DigitalTwinProfile:DTElement xmi:id="_NeHvcFdYEeu7_vQ-wWS__w" base_Operation="_1I2MgFTMEeu15ObSYm9ssg" id_scheme="dtmi" id_path="org:example:airqualitycontroller" id_version="1"/>
+  <DigitalTwinProfile:DTElement xmi:id="_nFQhsFdYEeu7_vQ-wWS__w" base_Property="_a_UqoFdYEeu7_vQ-wWS__w" id_scheme="dtmi" id_path="org:example:TemperatureSensor:type" id_version="1"/>
+  <DigitalTwinProfile:DTElement xmi:id="_R6XSMFqCEeubnr9zYtzGbQ" base_Property="_GoK3IFqAEeutDexZeaWgGg" id_scheme="dtmi" id_path="org:example:a" id_version="1"/>
+  <DigitalTwinProfile:DTElement xmi:id="_U_1OUFqCEeubnr9zYtzGbQ" base_Property="_BObnwFp_EeutDexZeaWgGg" id_scheme="dtmi" id_path="org:example:whatever" id_version="1"/>
+  <DigitalTwinProfile:DTElement xmi:id="_Ar0dEFv3EeujF8wUM4Bf5g" base_Property="_TagWoFp_EeutDexZeaWgGg" id_scheme="dtmi" id_path="org:example:abc" id_version="1"/>
+  <DigitalTwinProfile:DTElement xmi:id="_BxbaQFv3EeujF8wUM4Bf5g" base_Property="_KnS90FvuEeujF8wUM4Bf5g" id_scheme="dtmi" id_path="org:example:relationshipProperty" id_version="1"/>
+</xmi:XMI>

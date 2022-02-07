@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:DTML="http://www.example.org/DTML">
+  <DTML:Interface displayName="Room">
+    <id scheme="dtmi" path="com:example:Room" version="1"/>
+    <contents xsi:type="DTML:Relationship" displayName="airQualityControllers" writable="true" maxMultiplicity="-1" target="/0" name="airQualityControllers">
+      <id scheme="dtmi" path="org:example:whatever" version="1"/>
+      <properties displayName="room" writable="true" name="room"/>
+    </contents>
+  </DTML:Interface>
+  <DTML:Interface displayName="TemperatureSensor">
+    <id scheme="dtmi" path="org:example:tempsensor" version="1"/>
+    <contents xsi:type="DTML:Telemetry" displayName="temperature" name="temperature">
+      <id scheme="dtmi" path="org:example:TemperatureSensor:Temperature" version="1"/>
+    </contents>
+    <contents xsi:type="DTML:Property" displayName="type" name="type">
+      <id scheme="dtmi" path="org:example:TemperatureSensor:type" version="1"/>
+    </contents>
+  </DTML:Interface>
+</xmi:XMI>
