@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<DTML:DigitalTwinEnvironment
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:DTML="http://www.example.org/DTML"
+    name="airquality.aml">
+  <types displayName="Robot">
+    <id path="at.jku.se.production.robot"
+        version="1"/>
+    <contents
+        xsi:type="DTML:Relationship"
+        target="//@types.1"
+        name="connects"/>
+    <contents
+        xsi:type="DTML:Relationship"
+        maxMultiplicity="1"
+        target="//@types.2"
+        name="movesItem"/>
+    <contents
+        xsi:type="DTML:Telemetry"
+        name="xPosition"/>
+    <contents
+        xsi:type="DTML:Telemetry"
+        displayName="yPosition"
+        name="yPosition"/>
+    <contents
+        xsi:type="DTML:Telemetry"
+        name="zPosition"/>
+    <contents
+        xsi:type="DTML:Command"
+        displayName="moveX"
+        name="moveX"/>
+    <contents
+        xsi:type="DTML:Command"
+        name="moveY"/>
+    <contents
+        xsi:type="DTML:Command"
+        name="moveZ"/>
+    <contents
+        xsi:type="DTML:Property"
+        displayName="Battery Level"
+        name="batteryLevel"
+        schema="integer"/>
+  </types>
+  <types displayName="Conveyor">
+    <id scheme="dtdl"
+        path="at.jku.se.production.conveyor"
+        version="1"/>
+    <contents
+        xsi:type="DTML:Property"
+        name="aqLevel"/>
+  </types>
+  <types displayName="Item">
+    <id path="at.jku.se.production.item"
+        version="1"/>
+    <contents
+        xsi:type="DTML:Relationship"
+        name="sensors"/>
+    <contents
+        xsi:type="DTML:Relationship"
+        name="alarms"/>
+  </types>
+</DTML:DigitalTwinEnvironment>

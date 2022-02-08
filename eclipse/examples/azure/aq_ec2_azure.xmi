@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<DTML:DigitalTwinEnvironment
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:DTML="http://www.example.org/DTML"
+    name="airquality.aml">
+  <types displayName="Building">
+    <id path="at.jku.se.airquality.building"
+        version="1"/>
+    <contents
+        xsi:type="DTML:Relationship"
+        target="//@types.1"
+        name="rooms"/>
+    <contents
+        xsi:type="DTML:Relationship"
+        target="//@types.6"
+        name="robots"/>
+  </types>
+  <types displayName="Room">
+    <id scheme="dtdl"
+        path="at.jku.se.airquality.room"
+        version="1"/>
+    <contents
+        xsi:type="DTML:Property"
+        name="aqLevel"/>
+  </types>
+  <types displayName="Controller">
+    <id path="at.jku.se.airquality"
+        version="1"/>
+    <contents
+        xsi:type="DTML:Relationship"
+        target="//@types.3"
+        name="sensors"/>
+    <contents
+        xsi:type="DTML:Relationship"
+        target="//@types.4"
+        name="alarms"/>
+  </types>
+  <types displayName="Sensor">
+    <id scheme=""
+        path="at.se.jku.sensor"
+        version="1"/>
+    <contents
+        xsi:type="DTML:Property"
+        name="type"/>
+    <contents
+        xsi:type="DTML:Telemetry"
+        name="value"/>
+    <contents
+        xsi:type="DTML:Property"
+        name="unit"/>
+  </types>
+  <types displayName="Alarm">
+    <id path="at.jku.se.airquality.alarm"
+        version="1"/>
+    <contents
+        xsi:type="DTML:Telemetry"
+        name="isActive"/>
+  </types>
+  <types displayName="VentilationSystem">
+    <id path="at.jku.se.airquality.ventilationsystem"
+        version="1"/>
+    <contents
+        xsi:type="DTML:Telemetry"
+        displayName="level"
+        name="level"/>
+  </types>
+  <types displayName="Robot">
+    <id path="at.jku.se.airquality.robot"
+        version="1"/>
+    <contents
+        xsi:type="DTML:Relationship"
+        minMultiplicity="1"
+        maxMultiplicity="1"
+        target="//@types.2"
+        name="controller"/>
+    <contents
+        xsi:type="DTML:Relationship"
+        minMultiplicity="1"
+        maxMultiplicity="1"
+        target="//@types.1"
+        name="currentRoom"/>
+  </types>
+</DTML:DigitalTwinEnvironment>

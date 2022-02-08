@@ -6,6 +6,9 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="C:\Users\Daniel Lehner\Desktop\Repos\Papers\ECMFA_2022\eclipse\UML2DTDL"/>
+			<item value="C:\Users\Daniel Lehner\Desktop\Repos\Papers\ECMFA_2022\eclipse\aws"/>
+			<item value="C:\Users\Daniel Lehner\Desktop\Repos\Papers\ECMFA_2022\eclipse"/>
 			<item value="C:\Users\Daniel Lehner\Desktop\Repos\Papers\ecmfa2022\eclipse\DTDL"/>
 			<item value="C:\Users\Daniel Lehner\Desktop\Repos\Papers\ecmfa2022\eclipse"/>
 			<item value="C:\Users\Daniel Lehner\Desktop\Repos\Papers\ecmfa2022\eclipse\vortolang\org.eclipse.vorto.core"/>
@@ -56,5 +59,7 @@
 	<section name="WORKBENCH_SETTINGS">
 		<list key="ENABLED_TRANSFERS">
 		</list>
+	</section>
+	<section name="BasicNewProjectResourceWizard">
 	</section>
 </section>
