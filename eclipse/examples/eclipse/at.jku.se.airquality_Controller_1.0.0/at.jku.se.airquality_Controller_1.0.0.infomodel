@@ -1,0 +1,16 @@
+vortolang 1.0
+namespace at.jku.se.airquality
+version 1.0.0
+displayname "Controller"
+description "Information Model for Controller"
+using at.jku.se.airquality.Alarm;1.0.0
+using at.jku.se.airquality.Sensor;1.0.0
+
+	
+infomodel Controller {
+
+	functionblocks {
+	    mandatory multiple sensors as Sensor
+	    mandatory multiple alarms as Alarm
+	}
+}

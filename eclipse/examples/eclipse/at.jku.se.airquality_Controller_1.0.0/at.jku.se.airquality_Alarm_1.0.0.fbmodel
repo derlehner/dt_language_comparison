@@ -1,0 +1,13 @@
+vortolang 1.0
+namespace at.jku.se.airquality
+version 1.0.0
+displayname "Alarm"
+description "Functionblock for Alarm"
+
+functionblock Alarm {
+    events{
+        updateStatus{
+            isActive as boolean
+        }
+    }
+}

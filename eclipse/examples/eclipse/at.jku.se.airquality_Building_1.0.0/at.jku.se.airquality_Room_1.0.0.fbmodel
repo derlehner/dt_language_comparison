@@ -1,0 +1,16 @@
+vortolang 1.0
+namespace at.jku.se.airquality
+version 1.0.0
+displayname "Room"
+description "Functionblock for Room"
+
+functionblock Room {
+    status{
+        mandatory aqLevel as int
+    }
+    events{
+        changedAqLevel{
+            newAqLevel as int
+        }
+    }
+}

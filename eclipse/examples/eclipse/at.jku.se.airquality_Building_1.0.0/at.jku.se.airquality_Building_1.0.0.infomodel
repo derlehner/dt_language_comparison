@@ -1,0 +1,15 @@
+vortolang 1.0
+namespace at.jku.se.airquality
+version 1.0.0
+displayname "Building"
+description "Information Model for Building"
+using at.jku.se.airquality.Room;1.0.0
+using at.jku.se.airquality.Robot;1.0.0
+
+infomodel Building {
+
+	functionblocks {
+	    multiple rooms as Room
+	    multiple robots as Robot
+	}
+}

@@ -1,0 +1,17 @@
+vortolang 1.0
+namespace at.jku.se.airquality
+version 1.0.0
+displayname "Sensor"
+description "Functionblock for Sensor"
+
+functionblock Sensor {
+    configuration{
+        mandatory type as string
+        mandatory unit as string
+    }
+    events{
+        newValue{
+            mandatory value as string
+        }
+    }
+}
