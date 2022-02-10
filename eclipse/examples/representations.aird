@@ -9,4 +9,5 @@
   <semanticResources>pathmap://UML_METAMODELS/Ecore.metamodel.uml</semanticResources>
   <semanticResources>uml/evolution_scenario_1.uml</semanticResources>
   <semanticResources>uml/aq_ec2.uml</semanticResources>
+  <semanticResources>aws/aq_ec2_aws.xmi</semanticResources>
 </viewpoint:DAnalysis>
