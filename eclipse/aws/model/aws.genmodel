@@ -8,22 +8,13 @@
   <foreignModel>aws.ecore</foreignModel>
   <testsDirectory xsi:nil="true"/>
   <genPackages prefix="Aws" disposableProviderFactory="true" ecorePackage="aws.ecore#/">
-    <genClasses ecoreClass="aws.ecore#//Entity">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aws.ecore#//Entity/components"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aws.ecore#//Entity/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aws.ecore#//Entity/entityId"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aws.ecore#//Entity/description"/>
-    </genClasses>
-    <genClasses ecoreClass="aws.ecore#//Component">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aws.ecore#//Component/name"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference aws.ecore#//Component/instanceof"/>
-    </genClasses>
     <genClasses ecoreClass="aws.ecore#//ComponentType">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aws.ecore#//ComponentType/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aws.ecore#//ComponentType/isSingleton"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference aws.ecore#//ComponentType/propertydefinition"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference aws.ecore#//ComponentType/function"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference aws.ecore#//ComponentType/propertydefinition"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference aws.ecore#//ComponentType/function"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference aws.ecore#//ComponentType/extendsFrom"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aws.ecore#//ComponentType/id"/>
     </genClasses>
     <genClasses ecoreClass="aws.ecore#//PropertyDefinition">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aws.ecore#//PropertyDefinition/name"/>
@@ -31,15 +22,15 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aws.ecore#//PropertyDefinition/isStoredExternally"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aws.ecore#//PropertyDefinition/isTimeSeries"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aws.ecore#//PropertyDefinition/isRequiredInEntity"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference aws.ecore#//PropertyDefinition/datatype"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference aws.ecore#//PropertyDefinition/defaultValue"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference aws.ecore#//PropertyDefinition/datatype"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference aws.ecore#//PropertyDefinition/defaultValue"/>
     </genClasses>
     <genClasses ecoreClass="aws.ecore#//DataType">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aws.ecore#//DataType/type"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aws.ecore#//DataType/unitOfMeasure"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aws.ecore#//DataType/nestedType"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference aws.ecore#//DataType/allowedValues"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference aws.ecore#//DataType/relationship"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference aws.ecore#//DataType/allowedValues"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference aws.ecore#//DataType/relationship"/>
     </genClasses>
     <genClasses ecoreClass="aws.ecore#//DataValue">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aws.ecore#//DataValue/booleanValue"/>
@@ -49,7 +40,7 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference aws.ecore#//DataValue/listValue"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aws.ecore#//DataValue/longValue"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aws.ecore#//DataValue/stringValue"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference aws.ecore#//DataValue/relationshipvalue"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference aws.ecore#//DataValue/relationshipvalue"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aws.ecore#//DataValue/mapValue"/>
     </genClasses>
     <genClasses ecoreClass="aws.ecore#//Relationship">
@@ -62,15 +53,19 @@
     </genClasses>
     <genClasses ecoreClass="aws.ecore#//Function">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference aws.ecore#//Function/requiredProperties"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference aws.ecore#//Function/implementedBy"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference aws.ecore#//Function/implementedBy"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aws.ecore#//Function/scope"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aws.ecore#//Function/name"/>
     </genClasses>
     <genClasses ecoreClass="aws.ecore#//DataConnector">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aws.ecore#//DataConnector/isNative"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference aws.ecore#//DataConnector/lambda"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference aws.ecore#//DataConnector/lambda"/>
     </genClasses>
     <genClasses ecoreClass="aws.ecore#//LambdaFunction">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aws.ecore#//LambdaFunction/arn"/>
+    </genClasses>
+    <genClasses ecoreClass="aws.ecore#//Scope">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aws.ecore#//Scope/componenttype"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>
