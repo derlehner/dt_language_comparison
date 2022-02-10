@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:DigitalTwinProfile="http:///schemas/DigitalTwinProfile/_KrpvoFu9Eeus8K1tc4P4VA/1" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/DigitalTwinProfile/_KrpvoFu9Eeus8K1tc4P4VA/1 ../profile/DigitalTwinProfile.uml#_Krsy8Fu9Eeus8K1tc4P4VA">
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:DigitalTwinProfile="http:///schemas/DigitalTwinProfile/_KrpvoFu9Eeus8K1tc4P4VA/1" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/DigitalTwinProfile/_KrpvoFu9Eeus8K1tc4P4VA/1 ../profile/DigitalTwinProfile.uml">
   <uml:Model xmi:id="_xIVMIFTGEeu15ObSYm9ssg" name="model">
     <packageImport xmi:id="_xJj7MFTGEeu15ObSYm9ssg">
       <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
@@ -50,8 +50,10 @@
     <packagedElement xmi:type="uml:Class" xmi:id="_Shyn8AoxEeysYPi8YTUVWw" name="Sensor">
       <ownedAttribute xmi:id="_66GLoAo1EeysYPi8YTUVWw" name="type">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EString"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_fkepkIqCEeysTLwFD71VkA" value=""/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_989fsAo1EeysYPi8YTUVWw" name="value">
+        <eAnnotations xmi:id="_vBXjcIqEEeysTLwFD71VkA"/>
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EString"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_Mw_UsAo2EeysYPi8YTUVWw" name="unit">
@@ -79,6 +81,17 @@
       <ownedEnd xmi:id="_GPDJUApEEeysYPi8YTUVWw" name="robot" type="_e14KkApDEeysYPi8YTUVWw" association="_-1ilIApDEeysYPi8YTUVWw"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Association" xmi:id="_Ola-YApEEeysYPi8YTUVWw"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_6OrT8IqFEeysTLwFD71VkA" name="VisualAlarm">
+      <generalization xmi:id="_MA1uAIqGEeysTLwFD71VkA" general="_Un6m8AoxEeysYPi8YTUVWw"/>
+      <ownedOperation xmi:id="_80FP8IqFEeysTLwFD71VkA" name="alert">
+        <ownedParameter xmi:id="_-9a7AIqFEeysTLwFD71VkA" name="color">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EString"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_C95t4IqGEeysTLwFD71VkA" name="return" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EBoolean"/>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
   </uml:Model>
   <DigitalTwinProfile:DTElement xmi:id="_Ar0dEFv3EeujF8wUM4Bf5g" id_scheme="dtmi" id_path="org:example:abc" id_version="1"/>
   <DigitalTwinProfile:DTElement xmi:id="_BxbaQFv3EeujF8wUM4Bf5g" id_scheme="dtmi" id_path="org:example:relationshipProperty" id_version="1"/>
