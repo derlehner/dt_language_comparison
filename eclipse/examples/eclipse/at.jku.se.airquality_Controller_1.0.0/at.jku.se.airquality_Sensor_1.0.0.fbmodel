@@ -11,7 +11,7 @@ functionblock Sensor {
     }
     events{
         newValue{
-            mandatory value as string
+            mandatory value as float
         }
     }
 }

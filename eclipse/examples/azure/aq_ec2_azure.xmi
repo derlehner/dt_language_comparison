@@ -23,7 +23,12 @@
         version="1"/>
     <contents
         xsi:type="DTML:Property"
-        name="aqLevel"/>
+        name="aqLevel"
+        schema="integer"/>
+    <contents
+        xsi:type="DTML:Component"
+        name="ventilationSystem"
+        schema="//@types.5"/>
   </types>
   <types displayName="Controller">
     <id path="at.jku.se.airquality"
@@ -43,13 +48,16 @@
         version="1"/>
     <contents
         xsi:type="DTML:Property"
-        name="type"/>
+        name="type"
+        schema="string"/>
     <contents
         xsi:type="DTML:Telemetry"
-        name="value"/>
+        name="value"
+        schema="double"/>
     <contents
         xsi:type="DTML:Property"
-        name="unit"/>
+        name="unit"
+        schema="string"/>
   </types>
   <types displayName="Alarm">
     <id path="at.jku.se.airquality.alarm"
@@ -64,7 +72,8 @@
     <contents
         xsi:type="DTML:Telemetry"
         displayName="level"
-        name="level"/>
+        name="level"
+        schema="integer"/>
   </types>
   <types displayName="Robot">
     <id path="at.jku.se.airquality.robot"
@@ -81,5 +90,19 @@
         maxMultiplicity="1"
         target="//@types.1"
         name="currentRoom"/>
+  </types>
+  <types displayName="VisualAlarm"
+      extends="//@types.4">
+    <contents
+        xsi:type="DTML:Telemetry"
+        name="color"
+        schema="string"/>
+  </types>
+  <types displayName="AcousticAlarm"
+      extends="//@types.4">
+    <contents
+        xsi:type="DTML:Telemetry"
+        name="volume"
+        schema="integer"/>
   </types>
 </DTML:DigitalTwinEnvironment>
