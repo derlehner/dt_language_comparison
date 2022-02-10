@@ -31,6 +31,13 @@
       <datatype
           type="Boolean"/>
     </propertydefinition>
+    <propertydefinition
+        name="ventilation">
+      <datatype>
+        <relationship
+            targetComponentTypeId="5"/>
+      </datatype>
+    </propertydefinition>
   </componenttype>
   <componenttype
       name="Sensor"
@@ -104,6 +111,24 @@
         <relationship
             targetComponentTypeId="4"/>
       </datatype>
+    </propertydefinition>
+  </componenttype>
+  <componenttype
+      name="acousticAlarm"
+      extendsFrom="//@componenttype.3">
+    <propertydefinition
+        name="volume">
+      <datatype
+          type="Integer"/>
+    </propertydefinition>
+  </componenttype>
+  <componenttype
+      name="visualAlarm"
+      extendsFrom="//@componenttype.3">
+    <propertydefinition
+        name="color">
+      <datatype
+          type="String"/>
     </propertydefinition>
   </componenttype>
 </aws:Scope>
