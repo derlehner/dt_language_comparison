@@ -130,5 +130,8 @@
       <datatype
           type="String"/>
     </propertydefinition>
+    <function
+        requiredProperties="//@componenttype.8/@propertydefinition.0"
+        name="alert"/>
   </componenttype>
 </aws:Scope>
