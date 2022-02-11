@@ -83,11 +83,27 @@
     <packagedElement xmi:type="uml:Association" xmi:id="_Ola-YApEEeysYPi8YTUVWw"/>
     <packagedElement xmi:type="uml:Class" xmi:id="_6OrT8IqFEeysTLwFD71VkA" name="VisualAlarm">
       <generalization xmi:id="_MA1uAIqGEeysTLwFD71VkA" general="_Un6m8AoxEeysYPi8YTUVWw"/>
+      <ownedAttribute xmi:id="_UW-J4IszEeyPNrVlVBA5Dw" name="color">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EString"/>
+      </ownedAttribute>
       <ownedOperation xmi:id="_80FP8IqFEeysTLwFD71VkA" name="alert">
         <ownedParameter xmi:id="_-9a7AIqFEeysTLwFD71VkA" name="color">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EString"/>
         </ownedParameter>
         <ownedParameter xmi:id="_C95t4IqGEeysTLwFD71VkA" name="return" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EBoolean"/>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_A1S20IsvEeyPNrVlVBA5Dw" name="AcousticAlarm">
+      <ownedAttribute xmi:id="_aK7FgIszEeyPNrVlVBA5Dw" name="level">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EInt"/>
+      </ownedAttribute>
+      <ownedOperation xmi:id="_d5JDsIszEeyPNrVlVBA5Dw" name="alert">
+        <ownedParameter xmi:id="_gYPG4Is0EeyPNrVlVBA5Dw" name="level">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EInt"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_l2zBUIs0EeyPNrVlVBA5Dw" name="" direction="return">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EBoolean"/>
         </ownedParameter>
       </ownedOperation>
