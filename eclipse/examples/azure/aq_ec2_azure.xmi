@@ -23,6 +23,7 @@
         version="1"/>
     <contents
         xsi:type="DTML:Property"
+        writable="true"
         name="aqLevel"
         schema="integer"/>
     <contents
@@ -97,6 +98,14 @@
         xsi:type="DTML:Telemetry"
         name="color"
         schema="string"/>
+    <contents
+        xsi:type="DTML:Command"
+        name="alarm">
+      <request
+          name="color"
+          schema="string"/>
+      <response/>
+    </contents>
   </types>
   <types displayName="AcousticAlarm"
       extends="//@types.4">
