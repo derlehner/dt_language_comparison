@@ -93,6 +93,4 @@
       </ownedOperation>
     </packagedElement>
   </uml:Model>
-  <DigitalTwinProfile:DTElement xmi:id="_Ar0dEFv3EeujF8wUM4Bf5g" id_scheme="dtmi" id_path="org:example:abc" id_version="1"/>
-  <DigitalTwinProfile:DTElement xmi:id="_BxbaQFv3EeujF8wUM4Bf5g" id_scheme="dtmi" id_path="org:example:relationshipProperty" id_version="1"/>
 </xmi:XMI>
