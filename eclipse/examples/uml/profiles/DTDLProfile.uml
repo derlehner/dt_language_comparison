@@ -28,7 +28,7 @@
         <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_Ik83wYsPEeyPNrVlVBA5Dw" name="id_path" ordered="false" lowerBound="1">
           <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/uml2/5.0.0/Types#//String"/>
         </eStructuralFeatures>
-        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_Ik83w4sPEeyPNrVlVBA5Dw" name="id_version" ordered="false" lowerBound="1">
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_Ik83w4sPEeyPNrVlVBA5Dw" name="id_version" ordered="false" lowerBound="1" defaultValueLiteral="1">
           <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/uml2/5.0.0/Types#//Integer"/>
         </eStructuralFeatures>
       </eClassifiers>
@@ -85,12 +85,14 @@
     </ownedAttribute>
     <ownedAttribute xmi:id="_Ev9pIFcvEeuSzuxE_Zrflg" name="id_scheme">
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      <defaultValue xmi:type="uml:LiteralString" xmi:id="_HoOUQIsQEeyPNrVlVBA5Dw" value=""/>
     </ownedAttribute>
     <ownedAttribute xmi:id="_MBU98FcvEeuSzuxE_Zrflg" name="id_path">
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
     </ownedAttribute>
     <ownedAttribute xmi:id="_RMNHYFcvEeuSzuxE_Zrflg" name="id_version">
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_LeO8gIsQEeyPNrVlVBA5Dw" value="1"/>
     </ownedAttribute>
   </packagedElement>
   <packagedElement xmi:type="uml:Extension" xmi:id="_UHfwcFcGEeuBWO2rqwFOYw" name="Association_DTElement" memberEnd="_UHfwcVcGEeuBWO2rqwFOYw _UHfwclcGEeuBWO2rqwFOYw">

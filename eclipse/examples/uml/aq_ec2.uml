@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:DigitalTwinProfile="http:///schemas/DigitalTwinProfile/_KrpvoFu9Eeus8K1tc4P4VA/1" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/DigitalTwinProfile/_KrpvoFu9Eeus8K1tc4P4VA/1 ../profile/DigitalTwinProfile.uml">
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:DigitalTwinProfile="http:///schemas/DigitalTwinProfile/_Ik50YIsPEeyPNrVlVBA5Dw/2" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/DigitalTwinProfile/_Ik50YIsPEeyPNrVlVBA5Dw/2 profiles/DTDLProfile.uml#_Ik83sIsPEeyPNrVlVBA5Dw">
   <uml:Model xmi:id="_xIVMIFTGEeu15ObSYm9ssg" name="model">
     <packageImport xmi:id="_xJj7MFTGEeu15ObSYm9ssg">
       <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
@@ -92,5 +92,15 @@
         </ownedParameter>
       </ownedOperation>
     </packagedElement>
+    <profileApplication xmi:id="_yle6QIsPEeyPNrVlVBA5Dw">
+      <eAnnotations xmi:id="_ylh9kIsPEeyPNrVlVBA5Dw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="profiles/DTDLProfile.uml#_Ik83sIsPEeyPNrVlVBA5Dw"/>
+      </eAnnotations>
+      <appliedProfile href="profiles/DTDLProfile.uml#_2WhFsN6LEeim_-7Nvywluw"/>
+    </profileApplication>
   </uml:Model>
+  <DigitalTwinProfile:DTElement xmi:id="_1hkQ4IsPEeyPNrVlVBA5Dw" base_Class="_OeQL8AovEeysYPi8YTUVWw"/>
+  <DigitalTwinProfile:Target xmi:id="_521A8IsPEeyPNrVlVBA5Dw" base_Property="_z1WZsAo5EeysYPi8YTUVWw"/>
+  <DigitalTwinProfile:DTElement xmi:id="_-l3i8IsPEeyPNrVlVBA5Dw" base_Class="_4HCqsFTGEeu15ObSYm9ssg"/>
+  <DigitalTwinProfile:DTElement xmi:id="_R0bpkIsQEeyPNrVlVBA5Dw" base_Class="_2RUfMFTGEeu15ObSYm9ssg"/>
 </xmi:XMI>

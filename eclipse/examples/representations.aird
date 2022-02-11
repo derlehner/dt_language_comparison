@@ -10,4 +10,5 @@
   <semanticResources>uml/evolution_scenario_1.uml</semanticResources>
   <semanticResources>uml/aq_ec2.uml</semanticResources>
   <semanticResources>aws/aq_ec2_aws.xmi</semanticResources>
+  <semanticResources>uml/profiles/DTDLProfile.uml</semanticResources>
 </viewpoint:DAnalysis>
