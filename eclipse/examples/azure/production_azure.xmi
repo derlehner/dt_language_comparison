@@ -11,12 +11,12 @@
     <contents
         xsi:type="DTML:Relationship"
         target="//@types.1"
-        name="connects"/>
+        name="reaches"/>
     <contents
         xsi:type="DTML:Relationship"
         maxMultiplicity="1"
         target="//@types.2"
-        name="movesItem"/>
+        name="holdsItem"/>
     <contents
         xsi:type="DTML:Telemetry"
         name="xPosition"/>
@@ -30,13 +30,25 @@
     <contents
         xsi:type="DTML:Command"
         displayName="moveX"
-        name="moveX"/>
+        name="moveX">
+      <request
+          name="steps"
+          schema="integer"/>
+    </contents>
     <contents
         xsi:type="DTML:Command"
-        name="moveY"/>
+        name="moveY">
+      <request
+          name="steps"
+          schema="integer"/>
+    </contents>
     <contents
         xsi:type="DTML:Command"
-        name="moveZ"/>
+        name="moveZ">
+      <request
+          name="steps"
+          schema="integer"/>
+    </contents>
     <contents
         xsi:type="DTML:Property"
         displayName="Battery Level"
@@ -49,16 +61,52 @@
         version="1"/>
     <contents
         xsi:type="DTML:Property"
-        name="aqLevel"/>
+        name="isOn"/>
+    <contents
+        xsi:type="DTML:Telemetry"
+        name="speed"
+        schema="integer"/>
+    <contents
+        xsi:type="DTML:Command"
+        name="turnOn">
+      <response/>
+    </contents>
+    <contents
+        xsi:type="DTML:Command"
+        displayName="turnOff"
+        name="turnOff">
+      <response/>
+    </contents>
+    <contents
+        xsi:type="DTML:Command"
+        name="setDesiredSpeed">
+      <request
+          name="speed"
+          schema="integer"/>
+    </contents>
   </types>
   <types displayName="Item">
     <id path="at.jku.se.production.item"
         version="1"/>
     <contents
-        xsi:type="DTML:Relationship"
-        name="sensors"/>
+        xsi:type="DTML:Property"
+        name="xSize"
+        schema="integer"/>
+    <contents
+        xsi:type="DTML:Property"
+        name="ySize"
+        schema="integer"/>
+    <contents
+        xsi:type="DTML:Property"
+        name="zSize"
+        schema="integer"/>
+    <contents
+        xsi:type="DTML:Property"
+        name="weight"
+        schema="integer"/>
     <contents
         xsi:type="DTML:Relationship"
-        name="alarms"/>
+        target="//@types.1"
+        name="placedOn"/>
   </types>
 </DTML:DigitalTwinEnvironment>

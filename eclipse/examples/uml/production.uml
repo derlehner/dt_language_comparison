@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:DigitalTwinProfile="http:///schemas/DigitalTwinProfile/_KrpvoFu9Eeus8K1tc4P4VA/1" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/DigitalTwinProfile/_KrpvoFu9Eeus8K1tc4P4VA/1 ../profile/DigitalTwinProfile.uml">
+  <uml:Model xmi:id="_xIVMIFTGEeu15ObSYm9ssg" name="model">
+    <packageImport xmi:id="_xJj7MFTGEeu15ObSYm9ssg">
+      <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+    </packageImport>
+    <packagedElement xmi:type="uml:Class" xmi:id="_XeBtUI2XEeykeumhP3enUw" name="Robot">
+      <ownedAttribute xmi:id="_ds0K0I2XEeykeumhP3enUw" name="batteryLevel">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EInt"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_gnsAgI2XEeykeumhP3enUw" name="xPosition">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EInt"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_isLn0I2XEeykeumhP3enUw" name="yPosition">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EInt"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_kwr2MI2XEeykeumhP3enUw" name="zPosition">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EInt"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_5SYCgI2gEeykeumhP3enUw" name="reaches" association="_sQrGwI2gEeykeumhP3enUw"/>
+      <ownedAttribute xmi:id="_HgmawI2sEeykeumhP3enUw" name="holdsItem" type="_aT01wI2XEeykeumhP3enUw" association="_tkmy0I2rEeykeumhP3enUw"/>
+      <ownedOperation xmi:id="_yQWcII2eEeykeumhP3enUw" name="moveX">
+        <ownedParameter xmi:id="_z7RF0I2eEeykeumhP3enUw" name="setps">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EInt"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_7ovH0I2eEeykeumhP3enUw" name="moveY">
+        <ownedParameter xmi:id="_9x3-kI2eEeykeumhP3enUw" name="steps">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EInt"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_AwbaYI2fEeykeumhP3enUw" name="moveZ">
+        <ownedParameter xmi:id="_CPzicI2fEeykeumhP3enUw" name="steps">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EInt"/>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_Y9_rQI2XEeykeumhP3enUw" name="Conveyor">
+      <ownedAttribute xmi:id="_OPXokI2bEeykeumhP3enUw" name="isOn">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EBoolean"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_RvJiII2bEeykeumhP3enUw" name="speed">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EInt"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_aT01wI2XEeykeumhP3enUw" name="Item">
+      <ownedAttribute xmi:id="_UMa10I2bEeykeumhP3enUw" name="xSize">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EInt"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_VnS4YI2bEeykeumhP3enUw" name="ySize">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EInt"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_XefDgI2bEeykeumhP3enUw" name="zSize">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EInt"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_UU4Y0I2cEeykeumhP3enUw" name="weight">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EInt"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_6qUE0I2rEeykeumhP3enUw" name="placedOn" type="_Y9_rQI2XEeykeumhP3enUw" association="_vrxToI2rEeykeumhP3enUw"/>
+      <ownedOperation xmi:id="_GQ9qwI2fEeykeumhP3enUw" name="setDesiredSpeed">
+        <ownedParameter xmi:id="_K2_asI2fEeykeumhP3enUw" name="speed">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EInt"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_PlDFQI2fEeykeumhP3enUw" name="turnOn">
+        <ownedParameter xmi:id="_SCyTAI2fEeykeumhP3enUw" name="" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EBoolean"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_u6jvkI2fEeykeumhP3enUw" name="turnOff">
+        <ownedParameter xmi:id="_zvs5kI2fEeykeumhP3enUw" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EBoolean"/>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_sQrGwI2gEeykeumhP3enUw" name="reaches" memberEnd="_wBK84I2gEeykeumhP3enUw _5SYCgI2gEeykeumhP3enUw">
+      <ownedEnd xmi:id="_wBK84I2gEeykeumhP3enUw" type="_Y9_rQI2XEeykeumhP3enUw" association="_sQrGwI2gEeykeumhP3enUw"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_tkmy0I2rEeykeumhP3enUw" name="holdsItem" memberEnd="_LclIII2sEeykeumhP3enUw _HgmawI2sEeykeumhP3enUw">
+      <ownedEnd xmi:id="_LclIII2sEeykeumhP3enUw" type="_aT01wI2XEeykeumhP3enUw" association="_tkmy0I2rEeykeumhP3enUw"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_vrxToI2rEeykeumhP3enUw" name="placedOn" memberEnd="_y58f0I2rEeykeumhP3enUw _6qUE0I2rEeykeumhP3enUw">
+      <ownedEnd xmi:id="_y58f0I2rEeykeumhP3enUw" type="_Y9_rQI2XEeykeumhP3enUw" association="_vrxToI2rEeykeumhP3enUw"/>
+    </packagedElement>
+  </uml:Model>
+  <DigitalTwinProfile:DTElement xmi:id="_Ar0dEFv3EeujF8wUM4Bf5g" id_scheme="dtmi" id_path="org:example:abc" id_version="1"/>
+  <DigitalTwinProfile:DTElement xmi:id="_BxbaQFv3EeujF8wUM4Bf5g" id_scheme="dtmi" id_path="org:example:relationshipProperty" id_version="1"/>
+</xmi:XMI>
