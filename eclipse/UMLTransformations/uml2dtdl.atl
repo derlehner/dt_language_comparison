@@ -1,6 +1,6 @@
 module UML2DTDL;
---@nsURI UML=http://www.eclipse.org/uml2/5.0.0/UML
---@path DTDL=/DTML/model/dTML.ecore
+-- @path DTDL=/DTML/model/dTML.ecore
+-- @nsURI UML=http://www.eclipse.org/uml2/5.0.0/UML
 create OUT: DTDL from IN: UML, P:Profile;
 
 --- Evaluates whether the context has the given stereotype or not.
@@ -127,8 +127,12 @@ rule newCommand(op: UML!Operation){
 			else{
 				inputs<-inputs->including(param);}
 			}
-		com.request <- thisModule.newCommandPayload(inputs.first());
-		com.response <- thisModule.newCommandPayload(outputs.first());
+		if(inputs.first() <> OclUndefined){
+			com.request <- thisModule.newCommandPayload(inputs.first()); -- TODO: das sollte eigentlich eine Liste sein...
+		}
+		if(outputs.first() <> OclUndefined){
+			com.response <- thisModule.newCommandPayload(outputs.first());
+		}
 		com;
 	}
 }
@@ -179,14 +183,18 @@ rule newRelationship(prop: UML!Property){
 		rel: DTDL!Relationship(
 			displayName <- prop.name,
 			name <- prop.name,
-			minMultiplicity <- prop.lowerValue.value,
-			maxMultiplicity <- prop.upperValue.value,
 			writable <- not prop.isReadOnly,
 			target <- thisModule.resolveTemp(prop.type, 'interf')
 		)
 	do{
 		if(prop->hasStereotype(thisModule.element_stereotype_name)){
 			rel.id <- thisModule.newDTMI(prop.getValue(thisModule.element_stereotype, 'id_scheme'), prop.getValue(thisModule.element_stereotype, 'id_path'), prop.getValue(thisModule.element_stereotype, 'id_version'));
+		}
+		if(prop.lowerValue <> OclUndefined){
+			rel.minMultiplicity <- prop.lowerValue.value;
+		}
+		if(prop.upperValue <> OclUndefined){
+			rel.maxMultiplicity <- prop.upperValue.value;
 		}
 		rel.properties <- Set{};
 		for(ownedProp in prop.association.ownedEnd){
