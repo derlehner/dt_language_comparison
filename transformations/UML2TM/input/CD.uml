@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_Dmzm0D_EEeuku6tn8-EObQ">
+  <packagedElement xmi:type="uml:Class" xmi:id="_G_GYUD_EEeuku6tn8-EObQ" name="AirQualityController">
+    <ownedConnector xmi:id="_iMyGwFSuEeurRYWxvgzv7g"/>
+    <nestedClassifier xmi:type="uml:Association" xmi:id="_UN7mQFSuEeurRYWxvgzv7g" name="room"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_KflcgD_EEeuku6tn8-EObQ" name="Co2Sensor">
+    <ownedAttribute xmi:id="_sA3yEFQhEeutO5BXc-l73w" name="co2 value">
+      <qualifier xmi:id="_JhvJUFSuEeurRYWxvgzv7g" name="co2 value"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_PVpMgD_EEeuku6tn8-EObQ" name="TemperatureSensor">
+    <ownedAttribute xmi:id="_wZZ4kFQhEeutO5BXc-l73w" name="temperature"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_122oMFSvEeurRYWxvgzv7g" name="Room"/>
+</uml:Model>
