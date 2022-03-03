@@ -1,203 +1,143 @@
 module UML2DTDL;
---@nsURI UML=http://www.eclipse.org/uml2/5.0.0/UML
---@path DTDL=/DTML/model/dTML.ecore
-create OUT: DTDL from IN: UML, P:Profile;
+-- @path DTDL=/DTML/model/dTML.ecore
+-- @nsURI UML=http://www.eclipse.org/uml2/5.0.0/UML
+-- @nsURI Profile=http://www.eclipse.org/uml2/5.0.0/UML
+create OUT: UML  from IN: DTDL, P:Profile;
 
 --- Evaluates whether the context has the given stereotype or not.
 --- taken from https://wiki.eclipse.org/ATL/User_Guide_-_The_ATL_Language#Since_ATL_3.1
 helper context UML!Element def: hasStereotype(stereotype : String) : Boolean =
 	self.getAppliedStereotypes() -> collect(st | st.name) -> includes(stereotype);
 
-helper def: element_stereotype_name : String = 'DTElement';
-helper def: element_stereotype: Profile!Stereotype = Profile!Stereotype.allInstances() -> any(s | s.name = thisModule.element_stereotype_name);
+helper def: getStereotype(name: String): UML!Stereotype = Profile!Stereotype.allInstances() -> any(s | s.name = name);
+helper def: base_package : String = 'at.jku.se.airquality';
+rule system2package {
+	from
+		dts: DTDL!DigitalTwinEnvironment
+	to
+		package:UML!Package(
+			packagedElement <- dts.types
+		)
+	do{
+		package.applyProfile(Profile!Profile.allInstances() -> first());
+	}
+}
 
 -- main entry point
-rule class2interface {
+rule interface2class {
 	from
-		cl: UML!Class
+		interf: DTDL!Interface
 	to
-		interf: DTDL!Interface ()
+		class: UML!Class (
+			ownedAttribute <- interf.contents -> select(s | s.oclType() = DTDL!Telemetry) -> union(interf.contents -> select(s | s.oclType() = DTDL!Property)),
+			ownedOperation <- interf.contents -> select(s | s.oclType() = DTDL!Command)
+		)
 	do{
-		interf.displayName <- cl.name;
-		if(cl.ownedComment.notEmpty()){
-			interf.comment <- cl.ownedComment.first().body;
+		class.applyStereotype(thisModule.getStereotype('DTDL_VL_Element'));
+		class.applyStereotype(thisModule.getStereotype('DTDL_Element'));
+		
+		if(interf.id.oclType().name <> 'OclAny'){
+			interf.id.path.split('\\.')->last().println();
+			class.name <- interf.id.path.split('\\.')->last();
+			class.setValue(class.getAppliedStereotypes() -> any(s|s.name = 'DTDL_Element'), 'id_path', interf.id.path.split('\\.')->last());
+			class.setValue(class.getAppliedStereotypes() -> any(s|s.name = 'DTDL_Element'), 'id_version', interf.id.version);
+		}else{
+			class.setValue(class.getAppliedStereotypes() -> any(s|s.name = 'DTDL_Element'), 'id_path', thisModule.base_package);
+			class.setValue(class.getAppliedStereotypes() -> any(s|s.name = 'DTDL_Element'), 'id_version', 1);
 		}
-		if(cl->hasStereotype(thisModule.element_stereotype_name)){
-			interf.id <- thisModule.newDTMI(cl.getValue(thisModule.element_stereotype, 'id_scheme'), cl.getValue(thisModule.element_stereotype, 'id_path'), cl.getValue(thisModule.element_stereotype, 'id_version')); -- todo: DTMI erstellen (wie???)
+		if(interf.displayName.oclType().name <> 'OclAny'){
+			class.setValue(class.getAppliedStereotypes() -> any(s|s.name = 'DTDL_Element'), 'displayName', interf.displayName);
 		}
-			-- the remainder of this code section is for filling the contents property of the interface
-		interf.contents <- Set{};
-		-- create Properties, Telemetries, Relationships and Components
-		for(attr in cl.ownedAttribute) {
-				if(attr.association.oclType() = UML!Association){
-					if(attr.aggregation = #composite){
-						'Composition detected'.println();
-						interf.contents <- interf.contents->including(thisModule.newComponent(attr));
-					}else{
-						'Association detected'.println();
-						interf.contents <- interf.contents->including(thisModule.newRelationship(attr));
-					}
-				}else{
-					if(attr->hasStereotype('ObservableProperty')){
-						interf.contents <- interf.contents->including(thisModule.newTelemetry(attr));
-					}else{
-						interf.contents <- interf.contents->including(thisModule.newProperty(attr));
-					}
-				}
-		}
-		-- Create Commands
-		for(op in cl.ownedOperation) {
-			interf.contents <- interf.contents->including(thisModule.newCommand(op));
-		}
-		-- Create Components
-		for(innerCl in cl.nestedClassifier){
-			interf.contents <- interf.contents->including(thisModule.newComponent(innerCl));
-		}
+		if(interf.description.oclType().name <> 'OclAny'){
+			class.setValue(class.getAppliedStereotypes() -> any(s|s.name = 'DTDL_VL_Element'), 'description', interf.description);
+		}	
 	}
 }
 
 
-
-rule newDTMI(schema: String, path: String, version: Integer){
-	to dtmi: DTDL!DTMI(
-		scheme <- schema,
-		path <- path,
-		version <- version
+rule Telemetry2Attribute{
+	from tel: DTDL!Telemetry
+	
+	to prop: UML!Property(
+		name <- tel.name
 	)
 	do{
-		dtmi;
+		prop.applyStereotype(thisModule.getStereotype('DTDL_Element'));
+		prop.applyStereotype(thisModule.getStereotype('DTDL_VL_Element'));
+		prop.applyStereotype(thisModule.getStereotype('DT_Property'));
+		prop.setValue(prop.getAppliedStereotypes() -> any(s|s.name = 'DT_Property'), 'isTimeSeries', false);
+		if(tel.id.oclType().name <> 'OclAny'){
+			prop.setValue(prop.getAppliedStereotypes() -> any(s|s.name = 'DTDL_Element'), 'id_path', tel.id.path.split('\\.')->last());
+			prop.setValue(prop.getAppliedStereotypes() -> any(s|s.name = 'DTDL_Element'), 'id_version', tel.id.version);
+		}else{
+			prop.setValue(prop.getAppliedStereotypes() -> any(s|s.name = 'DTDL_Element'), 'id_path', thisModule.base_package);
+			prop.setValue(prop.getAppliedStereotypes() -> any(s|s.name = 'DTDL_Element'), 'id_version', 1);
+		}
+		if(tel.displayName.oclType().name <> 'OclAny'){
+			prop.setValue(prop.getAppliedStereotypes() -> any(s|s.name = 'DTDL_Element'), 'displayName', tel.displayName);
+		}
+		if(tel.description.oclType().name <> 'OclAny'){
+			prop.setValue(prop.getAppliedStereotypes() -> any(s|s.name = 'DTDL_VL_Element'), 'description', tel.description);
+		}
 	}
 }
 
-rule newTelemetry(attr: UML!Property){
-	to telem: DTDL!Telemetry(
-		displayName <- attr.name,
-		name <- attr.name		
-	)
-	do{
-		if(attr->hasStereotype(thisModule.element_stereotype_name)){
-			telem.id <- thisModule.newDTMI(attr.getValue(thisModule.element_stereotype, 'id_scheme'), attr.getValue(thisModule.element_stereotype, 'id_path'), attr.getValue(thisModule.element_stereotype, 'id_version'));
-		}
-		if(attr.ownedComment.notEmpty()){
-				telem.comment <- attr.ownedComment.first().body;
-		}
-		telem;
-	}
-}
-
-rule newProperty(attr: UML!Property){
-	to prop: DTDL!Property(
-		displayName <- attr.name,
-		name <- attr.name,
-		writable <- not attr.isReadOnly
+rule PropertyToAttribute{
+	from prop: DTDL!Property
+	
+	to attr: UML!Property(
+		name <- prop.name,
+		isReadOnly <- not prop.writable
 		
 	)
 	do{
-		if(attr->hasStereotype(thisModule.element_stereotype_name)){
-			prop.id <- thisModule.newDTMI(attr.getValue(thisModule.element_stereotype, 'id_scheme'), attr.getValue(thisModule.element_stereotype, 'id_path'), attr.getValue(thisModule.element_stereotype, 'id_version'));
+		attr.applyStereotype(thisModule.getStereotype('DTDL_Element'));
+		attr.applyStereotype(thisModule.getStereotype('DTDL_VL_Element'));
+		attr.applyStereotype(thisModule.getStereotype('DT_Property'));
+		attr.setValue(attr.getAppliedStereotypes() -> any(s|s.name = 'DT_Property'), 'isTimeSeries', false);
+		if(prop.id.oclType().name <> 'OclAny'){
+			attr.setValue(attr.getAppliedStereotypes() -> any(s|s.name = 'DTDL_Element'), 'id_path', prop.id.path.split('\\.')->last());
+			attr.setValue(attr.getAppliedStereotypes() -> any(s|s.name = 'DTDL_Element'), 'id_version', prop.id.version);
+		}else{
+			attr.setValue(attr.getAppliedStereotypes() -> any(s|s.name = 'DTDL_Element'), 'id_path', thisModule.base_package);
+			attr.setValue(attr.getAppliedStereotypes() -> any(s|s.name = 'DTDL_Element'), 'id_version', 1);
 		}
-		if(attr.ownedComment.notEmpty()){
-				prop.comment <- attr.ownedComment.first().body;
+		if(prop.displayName.oclType().name <> 'OclAny'){
+			attr.setValue(attr.getAppliedStereotypes() -> any(s|s.name = 'DTDL_Element'), 'displayName', prop.displayName);
 		}
-		prop;
+		if(prop.description.oclType().name <> 'OclAny'){
+			attr.setValue(attr.getAppliedStereotypes() -> any(s|s.name = 'DTDL_VL_Element'), 'description', prop.description);
+		}	
 	}
 	
 }
 
-rule newCommand(op: UML!Operation){
-	using{
-		inputs: Sequence(UML!Parameter) = Sequence{};	
-		outputs: Sequence(UML!Parameter) = Sequence{};
-	}
-	to 
-		com: DTDL!Command(
-			displayName <- op.name,
-			name <- op.name
-		)
-	do{
-		if(op->hasStereotype(thisModule.element_stereotype_name)){
-			com.id <- thisModule.newDTMI(op.getValue(thisModule.element_stereotype, 'id_scheme'), op.getValue(thisModule.element_stereotype, 'id_path'), op.getValue(thisModule.element_stereotype, 'id_version'));
-		}
-		if(op.ownedComment.notEmpty()){
-				com.comment <- op.ownedComment.first().body;
-		}
-		for(param in op.ownedParameter) {
-			if(param.direction = #out){
-				outputs<-outputs->including(param);}
-			else{
-				inputs<-inputs->including(param);}
-			}
-		com.request <- thisModule.newCommandPayload(inputs.first());
-		com.response <- thisModule.newCommandPayload(outputs.first());
-		com;
-	}
+
+rule RelationshipToAssociation{
+	from rel: DTDL!Relationship
+	
+	to assoc: UML!Association(
+		name <- rel.name
+	)
 }
 
-rule newCommandPayload(param: UML!Parameter){
-	to 
-		payload: DTDL!CommandPayload(
-			name <- param.name,
-			displayName <- param.name
-		)
-	do{
-		if(param.type.name = 'String'){
-			'String detected'.println();
-			payload.schema = 08;
-		}
-		
-		if(param.type.name = 'Boolean'){
-			'Boolean detected'.println();
-			payload.schema = #boolean;
-		}
-		payload;
-	}
+rule ComponentToAssociation{
+	from rel: DTDL!Component
+	
+	to assoc: UML!Association(
+		name <- rel.name
+	)
 }
 
-rule newComponent(prop: UML!Property){
-	to
-		comp: DTDL!Component(
-			displayName <- prop.name,
-			name <- prop.name,
-			schema <- thisModule.resolveTemp(prop.type, 'interf')
-		)
-	do{
-		if(prop->hasStereotype(thisModule.element_stereotype_name)){
-			comp.id <- thisModule.newDTMI(prop.getValue(thisModule.element_stereotype, 'id_scheme'), prop.getValue(thisModule.element_stereotype, 'id_path'), prop.getValue(thisModule.element_stereotype, 'id_version'));
-		}
-		if(prop.ownedComment.notEmpty()){
-				comp.comment <- prop.ownedComment.first().body;
-		}
-		comp;
-	}
+rule CommandToOperation{
+	from com: DTDL!Command
+	
+	to op: UML!Operation(
+		name <- com.name
+	)
 }
 
-rule newRelationship(prop: UML!Property){
-	using{
-		properties: Sequence(UML!Property) = Sequence{};
-	}
-	to
-		rel: DTDL!Relationship(
-			displayName <- prop.name,
-			name <- prop.name,
-			minMultiplicity <- prop.lowerValue.value,
-			maxMultiplicity <- prop.upperValue.value,
-			writable <- not prop.isReadOnly,
-			target <- thisModule.resolveTemp(prop.type, 'interf')
-		)
-	do{
-		if(prop->hasStereotype(thisModule.element_stereotype_name)){
-			rel.id <- thisModule.newDTMI(prop.getValue(thisModule.element_stereotype, 'id_scheme'), prop.getValue(thisModule.element_stereotype, 'id_path'), prop.getValue(thisModule.element_stereotype, 'id_version'));
-		}
-		rel.properties <- Set{};
-		for(ownedProp in prop.association.ownedEnd){
-			rel.properties <- rel.properties.including(thisModule.newProperty(ownedProp));
-		}
-		if(prop.ownedComment.notEmpty()){
-				rel.comment <- prop.ownedComment.first().body;
-		}
-		rel;
-	}
-}
+
 
 
 
