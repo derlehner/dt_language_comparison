@@ -26,8 +26,9 @@ A detailed comparison of the modeling concepts used by the individual modeling c
 To enable platform portability, we propose to extend UML with the functionality, and use this extended UML syntax (DTUML) as pivot for platform languages. Therefore, we created the DTUML profile, which is available in the folder /examples/uml/profiles.
 
 ## Transformations
-To showcase this DTUML-enabled portability, we created two transformations.
+To showcase this DTUML-enabled portability, we created three transformations.
 - The DTDL2UML transformation that transforms models created with the DTDL-MM to models conforming to the DTUML metamodel (UML class diagrams extended with the DTUML syntax)
-- the UML2TM transformation that transforms DTUML models to the TM-MM.
+- The UML2TM transformation that transforms DTUML models to the TM-MM.
+- The UML2DTDL transformation, which transforms UML models to DTDL-MM models.
 
 Both transformations are available in the folder /transformations.
