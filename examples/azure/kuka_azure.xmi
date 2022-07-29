@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<DTML:DigitalTwinEnvironment
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:DTML="http://www.example.org/DTML"
+    name="airquality.aml">
+  <instances
+      type="//@types.0"
+      name="KUKA_LBR_iiwa7"/>
+  <types displayName="KUKARobot">
+    <id path="at.jku.se.airquality.building"
+        version="1"/>
+    <contents
+        xsi:type="DTML:Relationship"
+        comment="Is this also available in AASX?"
+        name="testRelationship"/>
+    <contents
+        xsi:type="DTML:Command"
+        name="calculate_Velocities">
+      <request
+          name="input 1"/>
+      <request
+          name="input 2"/>
+      <response
+          name="velocity"/>
+    </contents>
+    <contents
+        xsi:type="DTML:Property"
+        name="Torque_Accuracy"/>
+    <contents
+        xsi:type="DTML:Property"
+        name="Range_of_Motion_Axis_1"/>
+    <contents
+        xsi:type="DTML:Telemetry"
+        type="Temperature"
+        name="Measured_Torque_Joint6"
+        unit="kilogramPerCubicMetre"/>
+    <contents
+        xsi:type="DTML:Telemetry"
+        type="Acceleration"
+        name="Current_Joint_Position_1"
+        schema="integer"
+        unit="gForce"/>
+  </types>
+</DTML:DigitalTwinEnvironment>
